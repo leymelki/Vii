@@ -43,7 +43,7 @@ class dle_mail {
 	
 	var $mail_method = 'php';
 	
-	function dle_mail($config, $is_html = false) {
+	function __construct($config, $is_html = false) {
 		$this->mail_method = $config['mail_metod'];
 		
 		$this->from = $config['admin_mail'];
