@@ -1,15 +1,5 @@
 <?php
-/* 
-	Appointment: создание уменьшенных копий
-	File: images.php 
-	Author: f0rt1 
-	Engine: Vii Engine
-	Copyright: NiceWeb Group (с) 2011
-	e-mail: niceweb@i.ua
-	URL: http://www.niceweb.in.ua/
-	ICQ: 427-825-959
-	Данный код защищен авторскими правами
-*/
+
 if(!defined( 'MOZG')){
 	die( "Hacking attempt!" );
 }
@@ -19,7 +9,7 @@ class thumbnail {
 	var $watermark_image_light;
 	var $watermark_image_dark;
 	
-	function thumbnail($imgfile) {
+	function __construct($imgfile) {
 		//detect image format
 
 		$info = @getimagesize($imgfile); 
@@ -55,7 +45,8 @@ class thumbnail {
 		
 	}
 	
-	function size_auto($size = 100, $site = 0, $jqCrop = 0) {
+	function size_auto($size = 100, $site = 0, $jqCrop = 0): int
+    {
 
 		$size = explode ("x", $size);
 		
@@ -76,7 +67,8 @@ class thumbnail {
 
 	}
 
-	function crop($nw, $nh) {
+	function crop($nw, $nh): int
+    {
 
 		$w = $this->img['lebar'];
 		$h = $this->img['tinggi'];
@@ -111,7 +103,8 @@ class thumbnail {
 		return 1;
 	}
 	
-	function jqCrop($nw, $nh, $cropData) {
+	function jqCrop($nw, $nh, $cropData): int
+    {
 		$cropDataExp = explode('|', $cropData);
 		$left = $cropDataExp[0];
 		$top = $cropDataExp[1];
@@ -153,7 +146,8 @@ class thumbnail {
 		return 1;
 	}
 
-	function scale($size = 100, $site = 0) {
+	function scale($size = 100, $site = 0): int
+    {
 
 		$site = intval( $site );
 		
@@ -261,4 +255,3 @@ class thumbnail {
 	}
 
 }
-?>
