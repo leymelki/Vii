@@ -21,7 +21,19 @@ class db {
     var $mysql_extend = "MySQLi";
     var $MySQL_time_taken = 0;
     var $query_id = false;
-    function connect($db_user, $db_pass, $db_name, $db_location = 'localhost', $show_error = 1) {
+
+    /**
+     * Connect to DB
+     *
+     * @param $db_user
+     * @param $db_pass
+     * @param $db_name
+     * @param string $db_location
+     * @param int $show_error
+     * @return bool
+     */
+    function connect($db_user, $db_pass, $db_name, $db_location = 'localhost', $show_error = 1)
+    {
         $db_location = explode(":", $db_location);
         if (isset($db_location[1])) {
             $this->db_id = @mysqli_connect($db_location[0], $db_user, $db_pass, $db_name, $db_location[1]);
@@ -141,10 +153,9 @@ class db {
 		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
 		</head>
 		<body>
-			<font size="4">Ошибка сервера, попробуйте обновить страницу позже. ' . $query . ' ' . $error_num . '</font> 
+			<p>Ошибка сервера, попробуйте обновить страницу позже. ' . $query . ' ' . $error_num . '</p> 
 		</body>
 		</html>';
         exit();
     }
 }
-?>
