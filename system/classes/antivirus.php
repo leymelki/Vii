@@ -11,6 +11,11 @@
 	Данный код защищен авторскими правами
 */
 
+/**
+ * Class antivirus
+ *
+ * @deprecated
+ */
 class antivirus{
 	var $bad_files       = array();
 	var $snap_files      = array();
