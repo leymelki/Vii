@@ -4,11 +4,11 @@ if (!defined('MOZG')) die('Hacking attempt!');
 class db {
     var $db_id = false;
     var $query_num = 0;
-    var $query_list = array();
+//    var $query_list = array();
     var $mysql_error = '';
     var $mysql_version = '';
     var $mysql_error_num = 0;
-    var $mysql_extend = "MySQLi";
+//    var $mysql_extend = "MySQLi";
     var $MySQL_time_taken = 0;
     var $query_id = false;
 
