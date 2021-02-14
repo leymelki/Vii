@@ -10,7 +10,7 @@
 	ICQ: 427-825-959
 	Данный код защищен авторскими правами
 */
-
+exit();
 @session_start();
 @ob_start();
 @ob_implicit_flush(0);
@@ -80,4 +80,3 @@ if($row['cnt'] AND $cost AND $abonent_cost){
 	echo "Ваш баланс пополнен на: {$abonent_cost} руб.";
 
 }
-?>

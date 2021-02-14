@@ -19,7 +19,7 @@ include ENGINE_DIR . '/classes/templates.php';
 if ($config['gzip'] == 'yes') include ENGINE_DIR . '/modules/gzip.php';
 //FUNC. COOKIES
 function clean_url($url) {
-    if ($url == '') return;
+//    if ($url == '') return;//what?
     $url = str_replace("http://", "", strtolower($url));
     $url = str_replace("https://", "", $url);
     if (substr($url, 0, 4) == 'www.') $url = substr($url, 4);

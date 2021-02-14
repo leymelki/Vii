@@ -1,7 +1,5 @@
 <?php
-/*
-	Сделано для пользователей форума cmstools.ru
-*/
+
 if (isset($_POST["PHPSESSID"])) {
     session_id($_POST["PHPSESSID"]);
 }
@@ -24,10 +22,10 @@ include ENGINE_DIR . '/init.php';
 //Если юзер перешел по реф ссылке, то добавляем ид реферала в сессию
 if ($_GET['reg']) $_SESSION['ref_id'] = intval($_GET['reg']);
 //Опридиления браузера
-if (stristr($_SERVER['HTTP_USER_AGENT'], 'MSIE 6.0')) $xBrowser = 'ie6';
-elseif (stristr($_SERVER['HTTP_USER_AGENT'], 'MSIE 7.0')) $xBrowser = 'ie7';
-elseif (stristr($_SERVER['HTTP_USER_AGENT'], 'MSIE 8.0')) $xBrowser = 'ie8';
-if ($xBrowser == 'ie6' OR $xBrowser == 'ie7' OR $xBrowser == 'ie8') header("Location: /badbrowser.php");
+//if (stristr($_SERVER['HTTP_USER_AGENT'], 'MSIE 6.0')) $xBrowser = 'ie6';
+//elseif (stristr($_SERVER['HTTP_USER_AGENT'], 'MSIE 7.0')) $xBrowser = 'ie7';
+//elseif (stristr($_SERVER['HTTP_USER_AGENT'], 'MSIE 8.0')) $xBrowser = 'ie8';
+//if ($xBrowser == 'ie6' OR $xBrowser == 'ie7' OR $xBrowser == 'ie8') header("Location: /badbrowser.php");
 //Загружаем кол-во новых новостей
 $CacheNews = mozg_cache('user_' . $user_info['user_id'] . '/new_news');
 if ($CacheNews) {
@@ -200,4 +198,3 @@ echo str_replace('{theme}', '/templates/' . $config['temp'], $tpl->result['main'
 $tpl->global_clear();
 $db->close();
 if ($config['gzip'] == 'yes') GzipOut();
-?>
